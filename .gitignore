@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------
+# Dataset (~1.5 GB). torchvision re-downloads it automatically on first run,
+# so it must never be committed.
+# ---------------------------------------------------------------------
+data/
+
+# ---------------------------------------------------------------------
+# Virtual environment (~1.2 GB). Recreate with the commands in README.md.
+# ---------------------------------------------------------------------
+.venv/
+venv/
+env/
+
+# ---------------------------------------------------------------------
+# Trained weights (~43 MB). Regenerate with:  python -m src.train
+# ---------------------------------------------------------------------
+models/*.pt
+
+# NOTE: outputs/ is intentionally NOT ignored - the result tables and figures
+# are the deliverable of this project and are small (~1.6 MB).
+
+# ---------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------
+# OS / editor cruft
+# ---------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

@@ -1,0 +1,16 @@
+# Core deep learning (CPU wheels are fine; see README for the CPU install command)
+torch>=2.2
+torchvision>=0.17
+
+# Explainability
+grad-cam>=1.5.0        # provides pytorch_grad_cam (Grad-CAM, Grad-CAM++, Score-CAM, etc.)
+shap>=0.44            # SHAP attributions
+
+# Numerics, plotting, utilities
+numpy>=1.26
+scipy>=1.11           # Wilcoxon signed-rank significance test
+matplotlib>=3.8
+pillow>=10.0
+scikit-learn>=1.4
+opencv-python>=4.9
+tqdm>=4.66

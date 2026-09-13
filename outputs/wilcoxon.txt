@@ -1,0 +1,9 @@
+WILCOXON signed-rank vs. Grad-CAM  on Combined = Ins - Del (higher=better)
+(p < 0.05 => difference is statistically significant)
+----------------------------------------------------------------
+Grad-CAM++         stat=     10.00  p=1   not significant
+Score-CAM          stat=     10.00  p=1   not significant
+Integrated Grad.   stat=      6.00  p=0.4375   not significant
+SHAP               stat=     10.00  p=1   not significant
+RISE               stat=      4.00  p=0.2188   not significant
+Occlusion          stat=      1.00  p=0.0625   not significant

@@ -1,0 +1,9 @@
+OVERALL LEADERBOARD (by average rank across metrics; 1.0 = best)
+----------------------------------------------------------------
+1. Occlusion          avg_rank=1.00   (deletion=1.0, insertion=1.0, combined=1.0, sanity=1.0)
+2. RISE               avg_rank=3.00   (deletion=2.0, insertion=2.0, combined=2.0, sanity=6.0)
+3. Score-CAM          avg_rank=3.75   (deletion=7.0, insertion=3.0, combined=3.0, sanity=2.0)
+4. Grad-CAM++         avg_rank=4.00   (deletion=5.0, insertion=4.0, combined=4.0, sanity=3.0)
+5. Grad-CAM           avg_rank=5.00   (deletion=6.0, insertion=5.0, combined=5.0, sanity=4.0)
+6. SHAP               avg_rank=5.50   (deletion=3.0, insertion=6.0, combined=6.0, sanity=7.0)
+7. Integrated Grad.   avg_rank=5.75   (deletion=4.0, insertion=7.0, combined=7.0, sanity=5.0)
