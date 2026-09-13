@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -5,8 +8,15 @@ import seaborn as sns
 
 sns.set_theme(style="whitegrid", font="DejaVu Sans")
 
-csv_path = "/mnt/user-data/uploads/results.csv"
-out = "/home/claude/eda/figs"
+# Paths are resolved relative to the project root (the parent of EDA/) so the
+# script runs from any working directory.
+ROOT = Path(__file__).resolve().parent.parent
+csv_path = ROOT / "outputs" / "results.csv"
+out = ROOT / "outputs" / "eda_results"
+os.makedirs(out, exist_ok=True)
+
+if not csv_path.exists():
+    raise SystemExit(f"{csv_path} not found - run `python -m src.run_experiment` first.")
 
 names = {
     "gradcam": "Grad-CAM",
@@ -29,7 +39,7 @@ print(f"rows {len(df)}, images {n_imgs}, methods {df['method'].nunique()}")
 summary = (df.groupby("method_name")[["deletion_auc", "insertion_auc", "combined",
            "sanity_corr", "seconds"]].mean().reindex(order))
 print(summary.round(4).to_string())
-summary.to_csv("/home/claude/eda/summary_by_method.csv")
+summary.to_csv(out / "summary_by_method.csv")
 
 means = df.groupby("method_name")["combined"].mean().reindex(order)
 stds = df.groupby("method_name")["combined"].std().reindex(order)

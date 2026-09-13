@@ -1,13 +1,17 @@
 import os
 import random
 from collections import Counter
+from pathlib import Path
 
 import numpy as np
 import matplotlib.pyplot as plt
 from torchvision.datasets import OxfordIIITPet
 
-data_dir = "./data"
-out = "./eda_dataset_figs"
+# Paths are resolved relative to the project root (the parent of EDA/) so the
+# script reuses the already-downloaded dataset no matter where it is run from.
+ROOT = Path(__file__).resolve().parent.parent
+data_dir = ROOT / "data"
+out = ROOT / "outputs" / "eda_dataset"
 os.makedirs(out, exist_ok=True)
 os.makedirs(data_dir, exist_ok=True)
 
@@ -19,9 +23,9 @@ cat_breeds = {
 }
 
 print("loading dataset (downloads on first run)...")
-ds = OxfordIIITPet(root=data_dir, split="trainval",
+ds = OxfordIIITPet(root=str(data_dir), split="trainval",
                    target_types=["category", "segmentation"], download=True)
-test = OxfordIIITPet(root=data_dir, split="test", target_types=["category"], download=True)
+test = OxfordIIITPet(root=str(data_dir), split="test", target_types=["category"], download=True)
 classes = ds.classes
 print(f"breeds {len(classes)}, trainval {len(ds)}, test {len(test)}")
 

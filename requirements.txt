@@ -14,3 +14,7 @@ pillow>=10.0
 scikit-learn>=1.4
 opencv-python>=4.9
 tqdm>=4.66
+
+# Exploratory data analysis (EDA/ scripts)
+pandas>=2.0
+seaborn>=0.13
